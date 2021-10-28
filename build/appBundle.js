@@ -3,7 +3,7 @@
  * SDK version: 4.7.0
  * CLI version: 2.6.0
  *
- * Generated: Thu, 28 Oct 2021 14:53:45 GMT
+ * Generated: Thu, 28 Oct 2021 14:59:32 GMT
  */
 
 var APP_com_epam_app_lightingSchool = (function () {
