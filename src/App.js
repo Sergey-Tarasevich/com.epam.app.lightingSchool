@@ -94,15 +94,15 @@ export default class App extends Lightning.Component {
     }
 
     if (key.code === 'ArrowDown') {
-      this._setState('Slider')
-
-      return true
-    }
-    if (key.code === 'ArrowDown' && this.tag('Slider')) {
       this._setState('Movies')
 
       return true
     }
+    // if (key.code === 'ArrowDown' && this.tag('Slider')) {
+    //   this._setState('Movies')
+
+    //   return true
+    // }
 
     if (key.code === 'ArrowUp') {
       this._setState('Header')

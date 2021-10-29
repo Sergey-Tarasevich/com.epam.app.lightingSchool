@@ -112,7 +112,7 @@ export default class Header extends Lightning.Component {
   _init() {
     this.index = 0
     this._setState('Focus')
-    this.tag('CentralBlock').children = itemData.map(item => {
+    this.tag('CentralBlock').children = itemData.map((item) => {
       return {
         type: HeaderItem,
         text: item.toUpperCase(),
