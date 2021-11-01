@@ -19,7 +19,7 @@ export default class Movies extends Lightning.Component {
     return {
       Text: {
         x: 30,
-        y: 785,
+        y: 745,
         text: {
           text: 'New Movie',
           fontSize: 39,
@@ -27,6 +27,7 @@ export default class Movies extends Lightning.Component {
           textColor: 0xffffffff,
         },
         Movies: {
+          y: 53,
           flex: {
             direction: 'row',
             justifyContent: 'space-between',
@@ -95,6 +96,8 @@ export default class Movies extends Lightning.Component {
         type: MoviesItem,
         src: imgArray.img,
         flexItem: { marginLeft: 23 },
+        w: 260,
+        h: 380,
       }
     })
   }

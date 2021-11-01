@@ -2,6 +2,7 @@ import { Lightning, Utils } from '@lightningjs/sdk'
 import Header from './components/Header/Header'
 import Slider from './components/Slider/Slider'
 import Movies from './components/Movies/Movies'
+import MoviesInfo from './components/Movies/MoviesInfo'
 import { getActiveScreen, navigate } from './lib/Router'
 
 export default class App extends Lightning.Component {
@@ -20,8 +21,9 @@ export default class App extends Lightning.Component {
         // src: Utils.asset('../static/images/background.png'),
       },
       Header: { type: Header },
-      Slider: { type: Slider },
-      Movies: { type: Movies },
+      // Slider: { type: Slider },
+      // Movies: { type: Movies },
+      MoviesInfo: { type: MoviesInfo },
 
       // RectangleWithColor: {
       //   rect: true,
@@ -72,6 +74,11 @@ export default class App extends Lightning.Component {
           return this.tag('Movies')
         }
       },
+      class MoviesInfo extends this {
+        _getFocused() {
+          return this.tag('MoviesInfo')
+        }
+      },
       class Screen extends this {
         _getFocused() {
           return getActiveScreen()
@@ -94,7 +101,7 @@ export default class App extends Lightning.Component {
     }
 
     if (key.code === 'ArrowDown') {
-      this._setState('Movies')
+      this._setState('MoviesInfo')
 
       return true
     }

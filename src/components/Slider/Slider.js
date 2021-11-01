@@ -9,15 +9,15 @@ export default class Slider extends Lightning.Component {
   static _template() {
     return {
       ImageDeadpool: {
-        y: h => h + 144,
+        y: (h) => h + 144,
         w: 1920,
-        h: 638,
+        h: 600,
         src: Utils.asset('../../static/images/slider/Deadpool.png'),
 
         Shadow: {
           // y: h => h - 300,
-          w: w => w,
-          h: 640,
+          w: (w) => w,
+          h: (h) => h + 4,
           src: Utils.asset('../../static/images/slider/DeadpoolShadow.png'),
         },
 
@@ -37,7 +37,8 @@ export default class Slider extends Lightning.Component {
           x: 154,
           y: 553,
           text: {
-            text: 'Options can be contextual to the screen and/or the screen item in focus',
+            text:
+              'Options can be contextual to the screen and/or the screen item in focus',
             fontSize: 27,
             fontFace: 'sans-serif',
             textColor: 0xffffffff,
