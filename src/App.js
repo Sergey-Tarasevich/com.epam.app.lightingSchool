@@ -1,13 +1,18 @@
-import { Lightning, Utils } from '@lightningjs/sdk'
+import { Lightning, Utils, Router } from '@lightningjs/sdk'
 import Header from './components/Header/Header'
 import Slider from './components/Slider/Slider'
 import Movies from './components/Movies/Movies'
 import MoviesInfo from './components/Movies/MoviesInfo'
 import { getActiveScreen, navigate } from './lib/Router'
+import { routings } from './lib/RoutingMap'
 
-export default class App extends Lightning.Component {
+export default class App extends Router.App {
   static getFonts() {
     return [{ family: 'DejaVu Sans', url: Utils.asset('fonts/DejaVuSans.ttf') }]
+  }
+
+  _setup() {
+    Router.startRouter(routings, this)
   }
 
   static _template() {
@@ -21,9 +26,9 @@ export default class App extends Lightning.Component {
         // src: Utils.asset('../static/images/background.png'),
       },
       Header: { type: Header },
-      // Slider: { type: Slider },
-      // Movies: { type: Movies },
-      MoviesInfo: { type: MoviesInfo },
+      Slider: { type: Slider },
+      Movies: { type: Movies },
+      // MoviesInfo: { type: MoviesInfo },
 
       // RectangleWithColor: {
       //   rect: true,
@@ -65,11 +70,20 @@ export default class App extends Lightning.Component {
         }
       },
       class Slider extends this {
+        _handleDown() {
+          this._setState('Movies')
+        }
+        _handleUp() {
+          this._setState('Header')
+        }
         _getFocused() {
           return this.tag('Slider')
         }
       },
       class Movies extends this {
+        _handleUp() {
+          this._setState('Slider')
+        }
         _getFocused() {
           return this.tag('Movies')
         }
@@ -89,6 +103,12 @@ export default class App extends Lightning.Component {
   _getFocused() {
     return this.tag('Header')
   }
+  _handleDown() {
+    this._setState('Slider')
+  }
+  _handleUp() {
+    this._setState('Header')
+  }
   _handleKey(key) {
     if (key.code === 'Backspace') {
       const activeScreen = getActiveScreen()
@@ -100,22 +120,22 @@ export default class App extends Lightning.Component {
       }
     }
 
-    if (key.code === 'ArrowDown') {
-      this._setState('MoviesInfo')
+    // if (key.code === 'ArrowDown') {
+    //   this._setState('Slider')
 
-      return true
-    }
-    // if (key.code === 'ArrowDown' && this.tag('Slider')) {
+    //   return true
+    // }
+    // else if (key.code === 'ArrowDown' && this.tag('Slider')) {
     //   this._setState('Movies')
 
     //   return true
     // }
 
-    if (key.code === 'ArrowUp') {
-      this._setState('Header')
+    // if (key.code === 'ArrowUp') {
+    //   this._setState('Header')
 
-      return true
-    }
+    //   return true
+    // }
 
     return false
   }

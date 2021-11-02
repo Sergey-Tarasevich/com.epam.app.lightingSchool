@@ -116,7 +116,7 @@ export default class Header extends Lightning.Component {
       return {
         type: HeaderItem,
         text: item.toUpperCase(),
-        // route: item.toLowerCase(),
+        route: item.toLowerCase(),
         // flexItem: { marginBottom: 30 },
       }
     })

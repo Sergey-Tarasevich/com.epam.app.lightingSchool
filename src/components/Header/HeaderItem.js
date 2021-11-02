@@ -18,11 +18,11 @@ export default class HeaderItem extends NavigationItem {
       // route: this.tag('Text').toLowerCase(),
       // route: value.toLowerCase(),
     })
-    this._text = value
+    this.item = value
     this._route = value.route.toLowerCase()
   }
   get item() {
-    return this._text
+    return this.item
   }
   _focus() {
     this.color = 0xffff0000
