@@ -13,7 +13,7 @@ export default class MoviesInfo extends Lightning.Component {
         h: 400,
         y: 165,
         x: 20,
-        src: Utils.asset('../../static/images/movies/Milano.png'),
+        src: Utils.asset('../../static/images/moviesInfo/Milano.png'),
         flex: {
           direction: 'row',
           justifyContent: 'flex-start',

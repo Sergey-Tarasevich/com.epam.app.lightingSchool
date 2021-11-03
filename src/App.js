@@ -2,7 +2,7 @@ import { Lightning, Utils, Router } from '@lightningjs/sdk'
 import Header from './components/Header/Header'
 import Slider from './components/Slider/Slider'
 import Movies from './components/Movies/Movies'
-import MoviesInfo from './components/Movies/MoviesInfo'
+import MoviesInfo from './components/MoviesInfo/MoviesInfo'
 import { getActiveScreen, navigate } from './lib/Router'
 import { routings } from './lib/RoutingMap'
 
