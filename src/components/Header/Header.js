@@ -2,11 +2,12 @@ import { Lightning, Utils } from '@lightningjs/sdk'
 import HeaderItem from './HeaderItem'
 // import NavigationItem from '../lib/NavigationItem'
 
-const itemData = ['Home', 'Movies', 'TV', 'Sports']
+const itemData = ['home', 'movies', 'tv', 'sports']
 
 export default class Header extends Lightning.Component {
   static _template() {
     return {
+      zIndex: 2,
       Header: {
         flex: {
           direction: 'row',
@@ -31,7 +32,6 @@ export default class Header extends Lightning.Component {
             w: 100,
             h: 50,
             src: Utils.asset('images/header/EPAM_logo.png'),
-            zIndex: 2,
           },
         },
 
@@ -116,7 +116,7 @@ export default class Header extends Lightning.Component {
       return {
         type: HeaderItem,
         text: item.toUpperCase(),
-        route: item.toLowerCase(),
+        route: '/' + item,
         // flexItem: { marginBottom: 30 },
       }
     })

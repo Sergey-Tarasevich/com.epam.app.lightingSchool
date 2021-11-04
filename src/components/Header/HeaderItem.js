@@ -16,10 +16,10 @@ export default class HeaderItem extends NavigationItem {
       textColor: 0xffffffff,
       textAlign: 'center',
       // route: this.tag('Text').toLowerCase(),
-      // route: value.toLowerCase(),
+      // route: value,
     })
-    this.item = value
-    this._route = value.route.toLowerCase()
+    // this.item = value
+    // this._route = value.route
   }
   get item() {
     return this.item

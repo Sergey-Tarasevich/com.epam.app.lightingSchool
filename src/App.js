@@ -3,8 +3,8 @@ import Header from './components/Header/Header'
 import Slider from './components/Slider/Slider'
 import Movies from './components/Movies/Movies'
 import MoviesInfo from './components/MoviesInfo/MoviesInfo'
-import { getActiveScreen, navigate } from './lib/Router'
-import { routings } from './lib/RoutingMap'
+// import { getActiveScreen, navigate } from './lib/Router'
+import routings from './lib/RoutingMap'
 
 export default class App extends Router.App {
   static getFonts() {
@@ -25,9 +25,9 @@ export default class App extends Router.App {
         color: 0xff000000,
         // src: Utils.asset('../static/images/background.png'),
       },
-      Header: { type: Header },
-      Slider: { type: Slider },
-      Movies: { type: Movies },
+      // Header: { type: Header },
+      // Slider: { type: Slider },
+      // Movies: { type: Movies },
       // MoviesInfo: { type: MoviesInfo },
 
       // RectangleWithColor: {
@@ -58,8 +58,7 @@ export default class App extends Router.App {
     //     ],
     //   })
     //   .start()
-    navigate('home')
-    // this._setState('HeaderState')
+    Router.navigate('/home')
   }
 
   static _states() {

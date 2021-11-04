@@ -1,6 +1,5 @@
 import BaseScreen from '../BaseScreen'
 // import getJsonData from '../../lib/FetchingData'
-// import List from '../../components/List/List'
 
 export default class HomeScreen extends BaseScreen {
   static _template() {
@@ -12,6 +11,12 @@ export default class HomeScreen extends BaseScreen {
           textColor: 0xffffffff,
           text: 'HomeScreen',
         },
+      },
+      Background: {
+        rect: true,
+        w: 900,
+        h: 900,
+        color: 0xff1f1f1f,
       },
       // List: {
       //   type: List,

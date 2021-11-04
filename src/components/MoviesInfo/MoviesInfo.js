@@ -1,4 +1,5 @@
 import { Lightning, Utils } from '@lightningjs/sdk'
+// import Header from '../Header/Header'
 // import Player from './Player'
 
 export default class MoviesInfo extends Lightning.Component {
@@ -8,6 +9,8 @@ export default class MoviesInfo extends Lightning.Component {
 
   static _template() {
     return {
+      zIndex: 1,
+      // Header: { type: Header },
       Pictures: {
         w: 500,
         h: 400,
@@ -46,7 +49,7 @@ export default class MoviesInfo extends Lightning.Component {
       PlayButton: {
         x: 800,
         y: 870,
-        zIndex: 2,
+        zIndex: 1,
         texture: lng.Tools.getRoundRect(
           280,
           80,
@@ -92,9 +95,14 @@ export default class MoviesInfo extends Lightning.Component {
           return this.tag('PlayButton')[this.index]
         }
 
-        reset() {
-          this.index = 0
-          this._refocus()
+        // reset() {
+        //   this.index = 0
+        //   this._refocus()
+        // }
+      },
+      class MoviesInfo extends this {
+        _getFocused() {
+          return this.tag('MoviesInfo')
         }
       },
     ]
