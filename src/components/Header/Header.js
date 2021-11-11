@@ -131,7 +131,9 @@ export default class Header extends Lightning.Component {
         _handleLeft() {
           if (this.index > 0) {
             this.index--
+            // return true
           }
+          // return false
         }
         _handleRight() {
           // we don't know exactly how many items the list can have

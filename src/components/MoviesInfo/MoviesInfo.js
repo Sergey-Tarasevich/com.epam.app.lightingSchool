@@ -1,5 +1,5 @@
 import { Lightning, Utils } from '@lightningjs/sdk'
-// import Header from '../Header/Header'
+import Header from '../Header/Header'
 // import Player from './Player'
 
 export default class MoviesInfo extends Lightning.Component {
@@ -9,8 +9,16 @@ export default class MoviesInfo extends Lightning.Component {
 
   static _template() {
     return {
-      zIndex: 1,
-      // Header: { type: Header },
+      zIndex: 2,
+      Header: { type: Header },
+      Background: {
+        rect: true,
+        w: 1920,
+        h: 1080,
+        //color black
+        color: 0xff000000,
+        // src: Utils.asset('../static/images/background.png'),
+      },
       Pictures: {
         w: 500,
         h: 400,
@@ -49,7 +57,7 @@ export default class MoviesInfo extends Lightning.Component {
       PlayButton: {
         x: 800,
         y: 870,
-        zIndex: 1,
+        // zIndex: 1,
         texture: lng.Tools.getRoundRect(
           280,
           80,
@@ -72,13 +80,6 @@ export default class MoviesInfo extends Lightning.Component {
             shadowColor: 0xff000000,
           },
         },
-        // ShadowPlayButton: {
-        //   x: 10,
-        //   y: 10,
-        //   zIndex: 1,
-        //   color: 0x66000000,
-        //   texture: lng.Tools.getShadowRect(280, 80, 30, 20, 15),
-        // },
       },
     }
   }
@@ -92,20 +93,28 @@ export default class MoviesInfo extends Lightning.Component {
     return [
       class Focus extends this {
         _getFocused() {
-          return this.tag('PlayButton')[this.index]
+          return this.tag('Header')
         }
 
-        // reset() {
-        //   this.index = 0
-        //   this._refocus()
-        // }
-      },
-      class MoviesInfo extends this {
-        _getFocused() {
-          return this.tag('MoviesInfo')
+        reset() {
+          this.index = 0
+          this._refocus()
         }
       },
+      // class MoviesInfo extends this {
+      //   _getFocused() {
+      //     return this.tag('MoviesInfo')
+      //   }
+      // },
     ]
+  }
+  _handleDown() {
+    // index++
+    this._setState('PlayButton')
+  }
+  _handleUp() {
+    // index--
+    this._setState('Header')
   }
 
   _focus() {

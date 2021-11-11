@@ -17,6 +17,7 @@ export default class Movies extends Lightning.Component {
 
   static _template() {
     return {
+      zIndex: 2,
       Text: {
         x: 30,
         y: 745,

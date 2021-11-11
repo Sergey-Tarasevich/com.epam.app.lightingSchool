@@ -1,18 +1,21 @@
-import HomeScreen from '../screens/HomeScreen'
+// import HomeScreen from '../screens/HomeScreen'
 import MoviesScreen from '../screens/MoviesScreen'
-import TVShowsScreen from '../screens/TVShowsScreen'
+// import TVShowsScreen from '../screens/TVShowsScreen'
 import SportsScreen from '../screens/SportsScreen'
-import Header from '../components/Header/Header'
-import Slider from '../components/Slider/Slider'
+// import Header from '../components/Header/Header'
+// import Slider from '../components/Slider/Slider'
+// import Movies from '../components/Movies/Movies'
+import ScreenHome from '../ScreenHome'
 import MoviesInfo from '../components/MoviesInfo/MoviesInfo'
 
 export default {
   root: '/',
   routes: [
-    { path: '/', component: Header },
-    { path: '/home', component: Header, component: Slider },
-    { path: '/movies', component: Slider },
+    { path: '/', component: ScreenHome },
+    { path: '/home', component: ScreenHome },
+    { path: '/movies', component: MoviesScreen },
     { path: '/tv', component: MoviesInfo },
+    { path: '/sport', component: SportsScreen },
   ],
 }
 

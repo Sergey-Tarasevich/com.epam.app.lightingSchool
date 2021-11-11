@@ -13,7 +13,7 @@ export default class Slider extends Lightning.Component {
 
   static _template() {
     return {
-      // zIndex: 1,
+      zIndex: 2,
       SliderImage: {
         y: (h) => h + 144,
         w: 1920,

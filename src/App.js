@@ -17,6 +17,7 @@ export default class App extends Router.App {
 
   static _template() {
     return {
+      zIndex: 0,
       Background: {
         rect: true,
         w: 1920,
@@ -61,81 +62,26 @@ export default class App extends Router.App {
     Router.navigate('/home')
   }
 
-  static _states() {
-    return [
-      class Header extends this {
-        _getFocused() {
-          return this.tag('Header')
-        }
-      },
-      class Slider extends this {
-        _handleDown() {
-          this._setState('Movies')
-        }
-        _handleUp() {
-          this._setState('Header')
-        }
-        _getFocused() {
-          return this.tag('Slider')
-        }
-      },
-      class Movies extends this {
-        _handleUp() {
-          this._setState('Slider')
-        }
-        _getFocused() {
-          return this.tag('Movies')
-        }
-      },
-      class MoviesInfo extends this {
-        _getFocused() {
-          return this.tag('MoviesInfo')
-        }
-      },
-      class Screen extends this {
-        _getFocused() {
-          return getActiveScreen()
-        }
-      },
-    ]
-  }
-  _getFocused() {
-    return this.tag('Header')
-  }
-  _handleDown() {
-    this._setState('Slider')
-  }
-  _handleUp() {
-    this._setState('Header')
-  }
-  _handleKey(key) {
-    if (key.code === 'Backspace') {
-      const activeScreen = getActiveScreen()
-      if (!activeScreen || activeScreen.ref === 'HomeScreen') {
-        return false
-      } else {
-        navigate('home')
-        return true
-      }
+  static _template() {
+    return {
+      ...super._template(),
     }
+  }
+  /**
+   * An example of extending the Router.App StateMachine
+   */
+  static _states() {
+    const states = super._states()
+    states.push(
+      class ExampleState extends this {
+        $enter() {}
+        $exit() {}
+      }
+    )
+    return states
+  }
 
-    // if (key.code === 'ArrowDown') {
-    //   this._setState('Slider')
-
-    //   return true
-    // }
-    // else if (key.code === 'ArrowDown' && this.tag('Slider')) {
-    //   this._setState('Movies')
-
-    //   return true
-    // }
-
-    // if (key.code === 'ArrowUp') {
-    //   this._setState('Header')
-
-    //   return true
-    // }
-
-    return false
+  _handleAppClose() {
+    this.application.closeApp()
   }
 }
