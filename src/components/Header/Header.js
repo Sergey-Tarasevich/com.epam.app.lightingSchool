@@ -1,6 +1,5 @@
 import { Lightning, Utils } from '@lightningjs/sdk'
 import HeaderItem from './HeaderItem'
-// import NavigationItem from '../lib/NavigationItem'
 
 const itemData = ['home', 'movies', 'tv', 'sports']
 

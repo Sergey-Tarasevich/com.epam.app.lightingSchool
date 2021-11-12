@@ -16,8 +16,6 @@ export default class HeaderItem extends NavigationItem {
       textColor: 0xffffffff,
       textAlign: 'center',
     })
-    // this.item = value
-    // this._route = value.route
   }
   get item() {
     return this.item

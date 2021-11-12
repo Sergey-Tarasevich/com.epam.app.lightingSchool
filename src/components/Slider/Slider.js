@@ -26,7 +26,7 @@ export default class Slider extends Lightning.Component {
         },
 
         // Shadow: {
-        //   // y: h => h - 300,
+        // y: h => h - 300,
         //   w: (w) => w,
         //   h: (h) => h + 4,
         //   src: Utils.asset('../../static/images/slider/DeadpoolShadow.png'),
@@ -62,7 +62,6 @@ export default class Slider extends Lightning.Component {
         y: 400,
         flex: {
           direction: 'row',
-          // justifyContent: 'space-between',
           wrap: false,
         },
         LeftButton: {
@@ -144,9 +143,6 @@ export default class Slider extends Lightning.Component {
     // this.setSmooth('scale', 1.05)
     this.tag('LeftButton').setSmooth('scale', 1.3)
     this.tag('RightButton').setSmooth('scale', 1.3)
-    // this.tag('Buttons').patch({
-    //   smooth: { scale: 1.2 },
-    // })
   }
   _unfocus() {
     // this.color = 0xffffffff
