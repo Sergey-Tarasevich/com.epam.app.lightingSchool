@@ -50,11 +50,11 @@ export default class ScreenHome extends Lightning.Component {
           return this.tag('Movies')
         }
       },
-      class MoviesInfo extends this {
-        _getFocused() {
-          return this.tag('MoviesInfo')
-        }
-      },
+      // class MoviesInfo extends this {
+      //   _getFocused() {
+      //     return this.tag('MoviesInfo')
+      //   }
+      // },
       class Screen extends this {
         _getFocused() {
           return getActiveScreen()

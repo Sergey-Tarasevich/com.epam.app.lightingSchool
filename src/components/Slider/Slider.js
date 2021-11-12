@@ -156,26 +156,4 @@ export default class Slider extends Lightning.Component {
     this.tag('RightButton').setSmooth('scale', 1)
     this.tag('LeftButton').setSmooth('scale', 1)
   }
-  // slider block
-  // _handleLeft() {
-  //   if (this._index > 0) {
-  //     this._index--
-  //     this._currentTransition = this._transitions[this._index]
-  //     this.changeSmoothing()
-  //   }
-  // }
-
-  // _handleRight() {
-  //   if (this._index < 6) {
-  //     this._index++
-  //     this._currentTransition = this._transitions[this._index]
-  //     this.changeSmoothing()
-  //   }
-  // }
-
-  // _init() {
-  //   this._index = 0
-  //   this._transitions = ['linear', 'ease', 'ease-in', 'ease-out', 'ease-in-out']
-  //   this._currentTransition = 'linear'
-  // }
 }

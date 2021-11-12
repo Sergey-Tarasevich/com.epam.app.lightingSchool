@@ -15,8 +15,6 @@ export default class HeaderItem extends NavigationItem {
       fontFace: 'sans-serif',
       textColor: 0xffffffff,
       textAlign: 'center',
-      // route: this.tag('Text').toLowerCase(),
-      // route: value,
     })
     // this.item = value
     // this._route = value.route
