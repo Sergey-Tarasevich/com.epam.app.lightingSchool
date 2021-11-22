@@ -1,0 +1,18 @@
+{
+  "imgArray": [
+    { "id": "1",
+      "img": "../../static/images/movies/1.png" },
+    { "id": "2",
+      "img": "../../static/images/movies/2.png" },
+    { "id": "3",
+      "img": "../../static/images/movies/3.png" },
+    { "id": "4",
+      "img": "../../static/images/movies/4.png" },
+    { "id": "5",
+      "img": "../../static/images/movies/5.png" },
+    { "id": "6",
+      "img": "../../static/images/movies/6.png" },
+    { "id": "7",
+      "img": "../../static/images/movies/7.png" }
+  ]
+}

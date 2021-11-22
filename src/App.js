@@ -75,7 +75,9 @@ export default class App extends Router.App {
     states.push(
       class ExampleState extends this {
         $enter() {}
-        $exit() {}
+        $exit() {
+          this.tag('Header')
+        }
       }
     )
     return states

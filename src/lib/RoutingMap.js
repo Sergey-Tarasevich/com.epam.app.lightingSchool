@@ -4,7 +4,8 @@ import MoviesScreen from '../screens/MoviesScreen'
 import SportsScreen from '../screens/SportsScreen'
 // import Header from '../components/Header/Header'
 // import Slider from '../components/Slider/Slider'
-// import Movies from '../components/Movies/Movies'
+import Movies from '../components/Movies/Movies'
+// import { imgArray } from '../components/Movies/Movies'
 import ScreenHome from '../ScreenHome'
 import MoviesInfo from '../components/MoviesInfo/MoviesInfo'
 
@@ -14,8 +15,10 @@ export default {
     { path: '/', component: ScreenHome },
     { path: '/home', component: ScreenHome },
     { path: '/movies', component: MoviesScreen },
-    { path: '/tv', component: MoviesInfo },
+    { path: `/tv`, component: MoviesInfo },
     { path: '/sport', component: SportsScreen },
+    // { path: '/details/:entityId', component: MoviesInfo },
+    { path: '/details/2', component: MoviesInfo },
   ],
 }
 

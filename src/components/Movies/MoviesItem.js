@@ -1,4 +1,4 @@
-import { Lightning } from '@lightningjs/sdk'
+import { Lightning, Router } from '@lightningjs/sdk'
 
 export default class MoviesItem extends Lightning.Component {
   static _template() {
@@ -15,6 +15,20 @@ export default class MoviesItem extends Lightning.Component {
   get item() {
     return this._src
   }
+
+  _init() {
+    // console.log(this.data)
+  }
+
+  _handleEnter() {
+    try {
+      Router.navigate(`/details/${this.data.id}`)
+      return true
+    } catch (e) {
+      console.error('MoviesInfo Error')
+    }
+  }
+
   _focus() {
     // this.color = 0xffffffff
     // this.tag('Movie').color = 0xffff00ff

@@ -108,6 +108,10 @@ export default class MoviesInfo extends Lightning.Component {
   //   return this.tag('Header')
   // }
 
+  _onUrlParams({ entityId }) {
+    console.log('MovieInfo catch Info')
+  }
+
   _handleDown() {
     this._setState('PlayButton')
     this.tag('PlayButton').color = 0xffff00ff
@@ -118,8 +122,14 @@ export default class MoviesInfo extends Lightning.Component {
     this.tag('PlayButton').color = 0xffffffff
     this.tag('PlayButton').setSmooth('scale', 1)
   }
+
   _focus() {
     this.tag('PlayButton').color = 0xffff00ff
     this.tag('PlayButton').setSmooth('scale', 1.28)
+  }
+  _handleKey(key) {
+    if (key.code === 'Backspace' || key.code === 'Delete') {
+      Router.navigate('/home')
+    }
   }
 }

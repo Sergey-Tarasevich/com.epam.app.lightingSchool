@@ -55,11 +55,6 @@ export default class ScreenHome extends Lightning.Component {
       //     return this.tag('MoviesInfo')
       //   }
       // },
-      class Screen extends this {
-        _getFocused() {
-          return getActiveScreen()
-        }
-      },
     ]
   }
   _getFocused() {
@@ -70,35 +65,5 @@ export default class ScreenHome extends Lightning.Component {
   }
   _handleUp() {
     this._setState('Header')
-  }
-  _handleKey(key) {
-    if (key.code === 'Backspace') {
-      const activeScreen = getActiveScreen()
-      if (!activeScreen || activeScreen.ref === 'HomeScreen') {
-        return false
-      } else {
-        navigate('home')
-        return true
-      }
-    }
-
-    // if (key.code === 'ArrowDown') {
-    //   this._setState('Slider')
-
-    //   return true
-    // }
-    // else if (key.code === 'ArrowDown' && this.tag('Slider')) {
-    //   this._setState('Movies')
-
-    //   return true
-    // }
-
-    // if (key.code === 'ArrowUp') {
-    //   this._setState('Header')
-
-    //   return true
-    // }
-
-    return false
   }
 }

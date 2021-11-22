@@ -1,15 +1,16 @@
 import { Lightning, Utils } from '@lightningjs/sdk'
 import MoviesItem from './MoviesItem'
+import { imgArray } from '../../imgArray.json'
 
-const imgArray = [
-  { img: '../../static/images/movies/1.png' },
-  { img: '../../static/images/movies/2.png' },
-  { img: '../../static/images/movies/3.png' },
-  { img: '../../static/images/movies/4.png' },
-  { img: '../../static/images/movies/5.png' },
-  { img: '../../static/images/movies/6.png' },
-  { img: '../../static/images/movies/7.png' },
-]
+// export const imgArray = [
+//   { img: '../../static/images/movies/1.png' },
+//   { img: '../../static/images/movies/2.png' },
+//   { img: '../../static/images/movies/3.png' },
+//   { img: '../../static/images/movies/4.png' },
+//   { img: '../../static/images/movies/5.png' },
+//   { img: '../../static/images/movies/6.png' },
+//   { img: '../../static/images/movies/7.png' },
+// ]
 export default class Movies extends Lightning.Component {
   static getFonts() {
     return [{ family: 'DejaVu Sans', url: Utils.asset('fonts/DejaVuSans.ttf') }]
@@ -93,9 +94,13 @@ export default class Movies extends Lightning.Component {
     this.index = 0
     this._setState('Focus')
     this.tag('Movies').children = imgArray.map((imgArray) => {
+      // console.log('123123123123', '/' + imgArray)
       return {
         type: MoviesItem,
+        data: imgArray,
         src: imgArray.img,
+        // id: imgArray.id,
+        // route: '/' + imgArray,
         flexItem: { marginLeft: 23 },
         w: 260,
         h: 380,

@@ -127,6 +127,7 @@ export default class Header extends Lightning.Component {
         _getFocused() {
           return this.tag('CentralBlock').children[this.index]
         }
+
         _handleLeft() {
           if (this.index > 0) {
             this.index--
@@ -134,6 +135,7 @@ export default class Header extends Lightning.Component {
           }
           // return false
         }
+
         _handleRight() {
           // we don't know exactly how many items the list can have
           // so we test it based on this component's child list
@@ -141,6 +143,7 @@ export default class Header extends Lightning.Component {
             this.index++
           }
         }
+
         reset() {
           this.index = 0
           this._refocus() // We need to force focus recalc.
