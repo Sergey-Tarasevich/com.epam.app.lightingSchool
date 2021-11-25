@@ -21,7 +21,7 @@ export default class Movies extends Lightning.Component {
       zIndex: 2,
       Text: {
         x: 30,
-        y: 745,
+        y: 725,
         text: {
           text: 'New Movie',
           fontSize: 39,
@@ -102,8 +102,8 @@ export default class Movies extends Lightning.Component {
         // id: imgArray.id,
         // route: '/' + imgArray,
         flexItem: { marginLeft: 23 },
-        w: 260,
-        h: 380,
+        w: 240,
+        h: 330,
       }
     })
   }
