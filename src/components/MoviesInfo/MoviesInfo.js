@@ -132,4 +132,7 @@ export default class MoviesInfo extends Lightning.Component {
       Router.navigate('/home')
     }
   }
+  _handleEnter() {
+    Router.navigate('/video')
+  }
 }

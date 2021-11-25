@@ -23,7 +23,7 @@ export default class MoviesItem extends Lightning.Component {
   _handleEnter() {
     try {
       Router.navigate(`/details/${this.data.id}`)
-      return true
+      // return true
     } catch (e) {
       console.error('MoviesInfo Error')
     }

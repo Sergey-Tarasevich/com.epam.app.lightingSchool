@@ -8,6 +8,7 @@ import Movies from '../components/Movies/Movies'
 // import { imgArray } from '../components/Movies/Movies'
 import ScreenHome from '../ScreenHome'
 import MoviesInfo from '../components/MoviesInfo/MoviesInfo'
+import { Video } from '../components/Video/video.component'
 
 export default {
   root: '/',
@@ -19,6 +20,7 @@ export default {
     { path: '/sport', component: SportsScreen },
     // { path: '/details/:entityId', component: MoviesInfo },
     { path: '/details/2', component: MoviesInfo },
+    { path: '/video', component: Video },
   ],
 }
 
