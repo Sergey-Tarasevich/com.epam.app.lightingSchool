@@ -2,7 +2,7 @@ LIGHTNING JS APP
 
 # com.epam.app.lightingSchool
 
-Lightning App for smart TV 1920 x 1080 (test task)
+Lightning App for Smart TV 1920 x 1080 (test task)
 
 1. clone repo
 
